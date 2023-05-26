@@ -1,1 +1,36 @@
-site_name: My Docs
+site_name: Venator Labs Wiki
+site_url: https://wiki.venatorlabs.dev
+repo_url: https://github.com/VenatorLabs/
+repo_name: Venator Labs
+nav:
+  - Home: home/home.md
+  - Rodeo:
+    - rodeo/getting-started.md
+    - rodeo/configuration.md
+    - rodeo/mapping-files.md
+    - rodeo/plugins.md
+    - rodeo/command-line-interface.md
+theme:
+  name: material
+  palette:
+    scheme: slate
+  features:
+    - content.code.copy
+    - navigation.footer
+    - navigation.tabs
+
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/VenatorLabs/
+    - icon: fontawesome/brands/twitter 
+      link: https://twitter.com/VenatorLabs
+    - icon: fontawesome/brands/facebook 
+      link: https://www.facebook.com/profile.php?id=100092402242057
+    - icon: fontawesome/brands/instagram 
+      link: https://www.instagram.com/venatorlabs/
+    - icon: fontawesome/brands/reddit 
+      link: https://www.reddit.com/r/VenatorLabs/
+    - icon: fontawesome/brands/linkedin 
+      link: https://www.linkedin.com/company/venator-labs/
+  generator: false
