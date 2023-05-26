@@ -5,10 +5,13 @@ repo_name: Venator Labs
 nav:
   - Home: home/home.md
   - Rodeo:
-    - rodeo/getting-started.md
+    - rodeo/what-is-rodeo.md
+    - rodeo/installing-rodeo.md
     - rodeo/configuration.md
-    - rodeo/mapping-files.md
-    - rodeo/plugins.md
+    - Processing Data:
+      - Processing Data: rodeo/processing-data.md
+      - Mapping Files: rodeo/mapping-files.md
+      - Plugins: rodeo/plugins.md
     - rodeo/command-line-interface.md
 theme:
   name: material

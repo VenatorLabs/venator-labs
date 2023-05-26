@@ -1,7 +1,5 @@
 # Plugins
 
-## Overview
-
 Rodeo has been designed to allow users to utilize custom plugins to manipulate, transform, and enrich their data as it is processed into node and relationships. A plugin has an opportunity to "hook" three parts of the processing pipeline.
 
 ## 1. Document Hook
