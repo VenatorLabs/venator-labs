@@ -1,17 +1,10 @@
 # Configuration
 
-The `rodeo-service` starts with a default configuration if a configuration file
-is not provided on launch. You can learn more about providing a configuration
-file at launch on the Venator Labs wiki.
-[Wiki - Configuration](https://github.com/VenatorLabs/venator-labs/wiki/Rodeo-Documentation#providing-a-configuration-file-on-launch).
-Otherwise, the `rodeo-service` can be configured by passing it a configuration
-via the CLI/Shell `set-config` command.
+The `rodeo-service` starts with a default configuration if a configuration file is not provided on launch. You can learn more about providing a configuration file at launch on the Venator Labs wiki. [Wiki - Configuration](https://github.com/VenatorLabs/venator-labs/wiki/Rodeo-Documentation#providing-a-configuration-file-on-launch). Otherwise, the `rodeo-service` can be configured by passing it a configuration via the CLI/Shell `set-config` command.
 
 ## Configuration Files
 
-Rodeo utilizes a YAML based configuration file to store the relevant preferences
-and connection information. A template configuration file has been provided
-below with each field labeled with a description type.
+Rodeo utilizes a YAML based configuration file to store the relevant preferences and connection information. A template configuration file has been provided below with each field labeled with a description type.
 
 ```yaml
 # general rodeo options

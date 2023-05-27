@@ -2,11 +2,9 @@
 
 ## CLI and Shell Commands
 
-Rodeo comes with a simple CLI and shell for users to interact with.
-Executing the program with the `-h` or `--help` flag will display all
-possible commands and flags.
+Rodeo comes with a simple CLI and shell for users to interact with. Executing the program with the `-h` or `--help` flag will display all possible commands and flags.
 
-### Command: set-config
+### set-config
 
 The `set-config` set the Rodeo service configuration via a configuration file.
 
@@ -16,10 +14,9 @@ The `set-config` set the Rodeo service configuration via a configuration file.
 rodeo set-config path_to_config_file
 ```
 
-### Command: list-config
+### list-config
 
-The `list-config` command lists out the current Rodeo service configuration
-information.
+The `list-config` command lists out the current Rodeo service configuration information.
 
 **Example**
 
@@ -27,10 +24,9 @@ information.
 rodeo list-config
 ```
 
-### Command: set-plugins
+### set-plugins
 
-The `set-plugins` command allows you to change the directory the Rodeo service
-will look for plugins in.
+The `set-plugins` command allows you to change the directory the Rodeo service will look for plugins in.
 
 **Example**
 
@@ -38,10 +34,9 @@ will look for plugins in.
 rodeo set-plugins path_to_plugins_directory
 ```
 
-### Command: list-plugins
+### list-plugins
 
-The `list-plugins` command will display the names of all Rodeo plugins that the
-system is able to load along with their description.
+The `list-plugins` command will display the names of all Rodeo plugins that the system is able to load along with their description.
 
 **Example**
 
@@ -49,11 +44,9 @@ system is able to load along with their description.
 rodeo list-plugins
 ```
 
-### Command: reload-plugins
+### reload-plugins
 
-The `reload-plugins` command will cause the Rodeo service to uninstall all
-current plugins and install any plugins located in the specified plugins
-directory.
+The `reload-plugins` command will cause the Rodeo service to uninstall all current plugins and install any plugins located in the specified plugins directory.
 
 **Example**
 
@@ -61,12 +54,9 @@ directory.
 rodeo reload-plugins
 ```
 
-### Command: validate
+### validate
 
-The `validate` command is used to validate the format of a mapping file before
-using it to process or ingest a data source. Using this command will result in
-Rodeo displaying error messages for any syntax errors detected within the
-specified mapping files.
+The `validate` command is used to validate the format of a mapping file before using it to process or ingest a data source. Using this command will result in Rodeo displaying error messages for any syntax errors detected within the specified mapping files.
 
 **Example**
 
@@ -74,11 +64,9 @@ specified mapping files.
 rodeo validate example-mapping.yml
 ```
 
-### Command: ingest
+### ingest
 
-The `ingest` command is used to process one or more data files using a specified
-mapping file. After processing the data, Rodeo will attempt to send it to
-the database specified in a configuration file.
+The `ingest` command is used to process one or more data files using a specified mapping file. After processing the data, Rodeo will attempt to send it to the database specified in a configuration file.
 
 **Example**
 
@@ -86,11 +74,9 @@ the database specified in a configuration file.
 rodeo ingest --json=example-data-1.json -m=example-mapping.yml
 ```
 
-### Command: start-watcher
+### start-watcher
 
-The `start-watcher` command spins up a directory watching thread that will
-ingest data from any file placed into the directory that matches a specified
-regular expression pattern.
+The `start-watcher` command spins up a directory watching thread that will ingest data from any file placed into the directory that matches a specified regular expression pattern.
 
 **Example**
 
@@ -98,10 +84,9 @@ regular expression pattern.
 rodeo start-watcher -m=example-mapping.yml /directory/to/watch example-data-.*.json JSON
 ```
 
-### Command: stop-watcher
+### stop-watcher
 
-The `stop-watcher` command allows you to shutdown a directory watcher thread
-based on its numeric id.
+The `stop-watcher` command allows you to shutdown a directory watcher thread based on its numeric id.
 
 **Example**
 
@@ -109,7 +94,7 @@ based on its numeric id.
 rodeo stop-watcher 0
 ```
 
-### Command: list-watchers
+### list-watchers
 
 The `list-watchers` command lists out all active directory watcher threads.
 
@@ -119,7 +104,7 @@ The `list-watchers` command lists out all active directory watcher threads.
 rodeo list-watchers
 ```
 
-### Command: shutdown-service
+### shutdown-service
 
 The `shutdown-service` command will cause the Rodeo service to terminate.
 

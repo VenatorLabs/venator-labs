@@ -1,19 +1,12 @@
 # Installing Rodeo
 
-A Rodeo installer is currently available for Debian Linux variants (Ubuntu & Kali)
-and Microsoft Windows. Rodeo is also available as a Docker container from the
-GitHub Container Registry. If you have another operating system, you can either
-build from source or bring your own version of Java to execute Rodeo. The
-instructions for each system are listed below in detail.
+A Rodeo installer is currently available for Debian Linux variants (Ubuntu & Kali) and Microsoft Windows. Rodeo is also available as a Docker container from the GitHub Container Registry. If you have another operating system, you can either build from source or bring your own version of Java to execute Rodeo. The instructions for each system are listed below in detail.
 
 ## Linux
 
-The `rodeo` and `rodeo-service` (named `rodeod` on Linux) are packaged together
-in a single `deb` installation file. The `deb` package includes an OpenJRE
-installation so that there are no additional installation dependencies. You can
-install `rodeo` in the following ways:
+The `rodeo` and `rodeo-service` (named `rodeod` on Linux) are packaged together in a single `deb` installation file. The `deb` package includes an OpenJRE installation so that there are no additional installation dependencies. You can install `rodeo` in the following ways:
 
-1. Automatic install using `apt`.
+### apt Installation
 
 ```sh
 # ensure environment variables are set
@@ -29,22 +22,18 @@ sudo add-apt-repository "https://venatorlabs.github.io/ppa/linux/${OS}/${codenam
 sudo apt-get update && sudo apt-get install rodeo
 ```
 
-2. Manual installation
+### Manual Installation
 
-2.1. Download the linux binary package that matches your operating system
-     and processor architecture from the [Downloads](https://venatorlabs.github.io/ppa/linux) page.
+1. Download the linux binary package that matches your operating system and processor architecture from the [Downloads](https://venatorlabs.github.io/ppa/linux) page.
 
-2.2. Install the `.deb` file using `dpkg --install`.
+2. Install the `.deb` file using `dpkg --install`.
 
-    ```sh
-    sudo dpkg --install rodeo_1.0.0-1_amd64.deb
-    # Note: the installation will configure the Venator Labs PPA to enable updates
-    ```
+```sh
+sudo dpkg --install rodeo_1.0.0-1_amd64.deb
+# Note: the installation will configure the Venator Labs PPA to enable updates
+```
 
-Both installation methods will install the `rodeo` and `rodeod` binaries. The `rodeod`
-binary will be installed as a service and will be started automatically as a non-root
-system user named `rodeod`. This user is created during installation if it doesn't already
-exist.
+Both installation methods will install the `rodeo` and `rodeod` binaries. The `rodeod` binary will be installed as a service and will be started automatically as a non-root system user named `rodeod`. This user is created during installation if it doesn't already exist.
 
 To start the `rodeo` shell, execute the following command:
 
@@ -54,35 +43,27 @@ To start the `rodeo` shell, execute the following command:
 
 ## Windows
 
-The `rodeo` and `rodeo-service` are packaged together in a single `msi` installation
-file. The `msi` package includes an OpenJRE installation so that there are no
-additional installation dependencies. You can install `rodeo` in the following ways:
+The `rodeo` and `rodeo-service` are packaged together in a single `msi` installation file. The `msi` package includes an OpenJRE installation so that there are no additional installation dependencies. You can install `rodeo` in the following ways:
 
-1. Winget (Windows Package Manager)
+### Winget (Windows Package Manager)
 
-    ```pwsh
-    winget install -e --id VenatorLabs.Rodeo
-    ```
+```pwsh
+winget install -e --id VenatorLabs.Rodeo
+```
 
-2. Manual Installation
+### Manual Installation
 
-2.1. Download the Microsoft Installer [here](https://venatorlabs.github.io/ppa/windows/).
+1. Download the Microsoft Installer [here](https://venatorlabs.github.io/ppa/windows/).
 
-2.2. Execute `Rodeo-#.#.#.msi` to start the installation wizard to completion.
+2. Execute `Rodeo-#.#.#.msi` to start the installation wizard to completion.
 
-Both installation methods will install the `rodeo` and `rodeo-service` binaries.
-Rodeo-service will be started automatically as a Windows service.
+Both installation methods will install the `rodeo` and `rodeo-service` binaries. Rodeo-service will be started automatically as a Windows service.
 
-To connect and interact with the Rodeo service, open the Rodeo console through the
-desktop icon, start menu shortcut, or by executing `rodeo.exe` in a terminal window.
+To connect and interact with the Rodeo service, open the Rodeo console through the desktop icon, start menu shortcut, or by executing `rodeo.exe` in a terminal window.
 
 ## Docker
 
-Rodeo is also available as a Docker container from the GitHub Container Registry. This
-is a Debian Linux based container loaded with both the `rodeo` and `rodeo-service`
-binaries. The service is started automatically when the container is run. The entrypoint
-is configured to open the Rodeo shell by default. To use this method of installation,
-execute the following commands:
+Rodeo is also available as a Docker container from the GitHub Container Registry. This is a Debian Linux based container loaded with both the `rodeo` and `rodeo-service` binaries. The service is started automatically when the container is run. The entrypoint is configured to open the Rodeo shell by default. To use this method of installation, execute the following commands:
 
 ```sh
 # Download from GitHub Container Registry
@@ -97,12 +78,7 @@ docker run -it ghcr.io/venatorlabs/rodeo:latest
 
 ## BYOJ (Bring Your Own Java)
 
-If you have another operating system, you can still use Rodeo but it requires you
-to manage the Java JRE installation yourself. Rodeo requires **Java 11 JRE** or
-higher. After you have installed the Java JRE for your operating system, download
-the cross-platform Rodeo bundle, `Rodeo [Java]`, from the
-[Releases](https://github.com/VenatorLabs/rodeo/releases) page or see the instructions
-for how to build from source below.
+If you have another operating system, you can still use Rodeo but it requires you to manage the Java JRE installation yourself. Rodeo requires **Java 11 JRE** or higher. After you have installed the Java JRE for your operating system, download the cross-platform Rodeo bundle, `Rodeo [Java]`, from the [Releases](https://github.com/VenatorLabs/rodeo/releases) page or see the instructions for how to build from source below.
 
 ```sh
 # unpack rodeo bundle
@@ -142,6 +118,4 @@ tar -xzvf ../dist/rodeo-0.0.0.tar.gz --strip-components=1
 tar -xzvf ../dist/rodeo-service-0.0.0.tar.gz --strip-components=1
 ```
 
-You now have an equivalent unpackaged cross-platform bundle in your current
-directory. To run your fresh build of Rodeo, follow the executions
-instructions above for BYOJ.
+You now have an equivalent unpackaged cross-platform bundle in your current directory. To run your fresh build of Rodeo, follow the executions instructions above for BYOJ.
