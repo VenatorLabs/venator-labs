@@ -3,7 +3,7 @@ site_url: https://wiki.venatorlabs.dev
 repo_url: https://github.com/VenatorLabs/
 repo_name: Venator Labs
 nav:
-  - Home: home/home.md
+  - Home: index.md
   - Rodeo:
     - rodeo/what-is-rodeo.md
     - rodeo/installing-rodeo.md
@@ -16,7 +16,18 @@ nav:
 theme:
   name: material
   palette:
-    scheme: slate
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     - content.code.copy
     - navigation.footer
@@ -37,3 +48,6 @@ extra:
     - icon: fontawesome/brands/linkedin 
       link: https://www.linkedin.com/company/venator-labs/
   generator: false
+
+markdown_extensions:
+  - attr_list
