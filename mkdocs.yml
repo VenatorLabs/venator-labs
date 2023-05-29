@@ -2,6 +2,7 @@ site_name: Venator Labs Docs
 site_url: https://wiki.venatorlabs.dev
 repo_url: https://github.com/VenatorLabs/
 repo_name: Venator Labs
+copyright: Copyright &copy; 2023 Venator Labs, Inc.
 nav:
   - Home: index.md
   - Rodeo:
