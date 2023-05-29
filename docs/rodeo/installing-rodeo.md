@@ -95,27 +95,3 @@ To run the cross-platform bundle, execute the following commands:
 ./rodeo-0.0.0/bin/rodeo
 # Rodeo>
 ```
-
-### Build from Source
-
-```sh
-# Download the source code
-git clone --depth 1 https://github.com/VenatorLabs/rodeo.git
-git lfs install --local
-git lfs pull
-
-# [Optional] to set a rodeo version, modify the version variable in:
-sed -E -i 's/0\.0\.0/1.0.0/' buildSrc/src/main/groovy/rodeo-main.gradle
-
-# Build rodeo and rodeo-service
-./gradlew assemble     # Alternatively, gradlew.bat for Windows
-# creates ./dist/rodeo-0.0.0.tar.gz
-# creates ./dist/rodeo-service-0.0.0.tar.gz
-
-# unarchive rodeo and rodeo-service
-mkdir -vp ./rodeo-0.0.0 && cd ./rodeo-0.0.0
-tar -xzvf ../dist/rodeo-0.0.0.tar.gz --strip-components=1
-tar -xzvf ../dist/rodeo-service-0.0.0.tar.gz --strip-components=1
-```
-
-You now have an equivalent unpackaged cross-platform bundle in your current directory. To run your fresh build of Rodeo, follow the executions instructions above for BYOJ.
