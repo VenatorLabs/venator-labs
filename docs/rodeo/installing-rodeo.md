@@ -6,17 +6,22 @@ A Rodeo installer is currently available for Debian Linux variants (Ubuntu & Kal
 
 The `rodeo` and `rodeo-service` (named `rodeod` on Linux) are packaged together in a single `deb` installation file. The `deb` package includes an OpenJRE installation so that there are no additional installation dependencies. You can install `rodeo` in the following ways:
 
-### apt Installation
+### Apt Installation
 
 ```sh
 # ensure environment variables are set
-. /etc/os-release
+OS="$(sh -c '. /etc/os-release && echo "$ID"')"
+CODENAME="$(sh -c '. /etc/os-release && echo "$VERSION_CODENAME"')"
+ARCH="$(dpkg --print-architecture)"
+PPA_REPO_URL="https://pkgs.venatorlabs.dev"
+KEYRING="/opt/share/keyrings/venatorlabs-keyring-2023.gpg"
 
 # Add the Venator Labs, Inc. cryptographic public key for verification
-wget -O- https://venatorlabs.github.io/ppa/venatorlabs.key | sudo apt-key add -
+sudo mkdir -vp "$(dirname "${KEYRING}")"
+wget -O- "$PPA_REPO_URL/venatorlabs.key" | sudo cat >"${KEYRING}"
 
-# add the Venator Labs Personal Package Archive (PPA)
-sudo add-apt-repository "https://venatorlabs.github.io/ppa/linux/${OS}/${codename}"
+# add the Venator Labs, Inc. Personal Package Archive (PPA)
+printf '%s\n' "deb [arch=$ARCH signed-by=$KEYRING] $PPA_REPO_URL/${OS} ${CODENAME} stable" | sudo tee /etc/apt/sources.list.d/venatorlabs.list
 
 # install latest rodeo version (for a specific version use rodeo-#.#.#)
 sudo apt-get update && sudo apt-get install rodeo
