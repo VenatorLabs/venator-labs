@@ -78,7 +78,7 @@ docker run -it ghcr.io/venatorlabs/rodeo:latest
 
 ## BYOJ (Bring Your Own Java)
 
-If you have another operating system, you can still use Rodeo but it requires you to manage the Java JRE installation yourself. Rodeo requires **Java 11 JRE** or higher. After you have installed the Java JRE for your operating system, download the cross-platform Rodeo bundle, `Rodeo [Java]`, from the [Releases](https://github.com/VenatorLabs/rodeo/releases) page or see the instructions for how to build from source below.
+If you have another operating system, you can still use Rodeo but it requires you to manage the Java JRE installation yourself. Rodeo requires **Java 17 JRE** or higher. After you have installed the Java JRE for your operating system, download the cross-platform Rodeo bundle, `Rodeo [Java]`, from the [Releases](https://github.com/VenatorLabs/rodeo/releases) page or see the instructions for how to build from source below.
 
 ```sh
 # unpack rodeo bundle
