@@ -63,14 +63,14 @@ To connect and interact with the Rodeo service, open the Rodeo console through t
 
 ## Docker
 
-Rodeo is also available as a Docker container from the GitHub Container Registry. This is a Debian Linux based container loaded with both the `rodeo` and `rodeo-service` binaries. The service is started automatically when the container is run. The entrypoint is configured to open the Rodeo shell by default. To use this method of installation, execute the following commands:
+Rodeo is also available as a Docker container from Docker Hub. This is a Debian Linux based container loaded with both the `rodeo` and `rodeo-service` binaries. The service is started automatically when the container is run. The entrypoint is configured to open the Rodeo shell by default. To use this method of installation, execute the following commands:
 
 ```sh
 # Download from GitHub Container Registry
-docker pull ghcr.io/venatorlabs/rodeo:latest
+docker pull venatorlabs/rodeo:latest
 
 # Run the container as interactive for rodeo cli
-docker run -it ghcr.io/venatorlabs/rodeo:latest
+docker run -it venatorlabs/rodeo:latest
 
 # add bind-mounts (-v) to pass data files from your local host to the container
 # run without (-it) to tail rodeod logs
