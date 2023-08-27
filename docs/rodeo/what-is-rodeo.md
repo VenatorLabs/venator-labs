@@ -2,7 +2,7 @@
 
 ## Overview
 
-Rodeo is a data ingestion tool designed to process, transform, and send data to graph databases. Rodeo currently supports the [Neo4j](https://neo4j.com/) database. The purpose of this tool is to provide users with a method to easily define a graph schema, process data of various formats, and enrich the data as it is transformed into nodes and relationships. Rodeo provides these capabilities through its use of mapping files where users can model their data. Rodeo also provides a plugin architecture that allows users to create and utilize custom plugins to transform data at various points in the processing pipeline.
+Rodeo is a data ingestion tool designed to process, transform, and send data to graph databases. The purpose of this tool is to provide users with a method to easily define a graph schema, process data of various formats, and enrich the data as it is transformed into nodes and relationships. Rodeo provides these capabilities through its use of mapping files where users can model their data. Rodeo also provides a plugin architecture that allows users to create and utilize custom plugins to transform data at various points in the processing pipeline. Rodeo currently supports the Neo4j database.
 
 ## How It Works
 

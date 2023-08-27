@@ -16,11 +16,11 @@ ARCH="$(dpkg --print-architecture)"
 PPA_REPO_URL="https://pkgs.venatorlabs.dev"
 KEYRING="/opt/share/keyrings/venatorlabs-keyring-2023.gpg"
 
-# Add the Venator Labs, Inc. cryptographic public key for verification
+# add The Venator Labs Team's cryptographic public key for verification
 sudo mkdir -vp "$(dirname "${KEYRING}")"
 wget -O- "$PPA_REPO_URL/venatorlabs.key" | sudo cat >"${KEYRING}"
 
-# add the Venator Labs, Inc. Personal Package Archive (PPA)
+# add The Venator Labs Team's Personal Package Archive (PPA)
 printf '%s\n' "deb [arch=$ARCH signed-by=$KEYRING] $PPA_REPO_URL/${OS} ${CODENAME} stable" | sudo tee /etc/apt/sources.list.d/venatorlabs.list
 
 # install latest rodeo version (for a specific version use rodeo-#.#.#)
